@@ -20,6 +20,17 @@ Markdown actually combines advantages of both, Word and Latex, and in the far fu
 - **Fast compilation:** PDF and Word documents are created within seconds. By sharing both, your colleagues can choose how they want to annotate and comment your work. Want to put your paper on a website? It's just a millisecond away.
 - **Fully adaptable:** all the scripts and templates are open-source. Adapt it to your needs. For example, use a specific journal template, or add more features. 
 
+## Screenshots
+
+Editing `.md` files with Typora, compiling output with the `Makefile`, and screenshots of output files: PDF, Latexdiff, Word, HTML.
+
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png" width="15%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png" width="15%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png" width="15%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png" width="15%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png" width="15%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png" width="15%"/></a> 
+
 
 ## Requirements 
 
