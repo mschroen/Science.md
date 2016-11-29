@@ -1,22 +1,31 @@
-# science.md
-Framework for drafting scientific documents: *Write* (Markdown), *Compile* (PDF, Word, HTML), *Share* (Git).
+# Science.md
+An easy framework for drafting scientific documents: *Write* (Markdown), *Compile* (PDF, Word, HTML), *Share*.
 
 ## Concept
 
-This framework is designed to make writing easier. It provides lots of helper scripts to do the work for you, like building the manuscript PDF, creating folders for milestones, generating diffs, and more. You can focus on writing, while formatting, compiling, and collaborating just works for everyone like a charm.
+This framework is designed to make writing easier. It provides lots of helper scripts to do the work for you, like building the manuscript PDF, creating folders for milestones, generating diffs, and more. You can focus on writing, while formating, compiling, and collaborating will just work like a charm.
 
-**Advantages to other collaborative writing tools:**
+### Philosophy
 
-- *Write in Markdown:* Focus on writing, not on tex commands. Paper writing is now possible with simple plain text.
-- *Self-hosting repositories:* use any version control software hosted by you or your institution. Many institutions do not allow research to be hosted at someone elses server.
-- *Work offline* from any location. That allows you to be independent from Wifi, and still be able to do fancy WYSIWYG writing in Markdown, e.g., using [Typora](http://www.typora.io/).
-- *Full control:* It's your own folder, your own desktop. Add data files and share anything wihtout uploading. And it's you who decides who has access to your repository.
-- *Fast compilation:* PDF and Word documents are created within seconds. By sharing both, your colleagues can choose how they want to annotate and comment your work. 
-- *Fully adaptable:* all the scripts and templates are open-source. Adapt it to your needs. For example, use a specific journal template, or add more features. 
+*Have you heared about the ever-lasting discussion between Word and Latex users?* Don't try to convince your coauthors, you'll fail. My philosophy is that everyone is free and can use their favorit tool. Don't standardarize things. Let your coauthors decide whether they want to annotate your PDF, to put comments in Word, or to write directly in Markdown using your repository.
 
-Everyone is free to use their favorit tool. Don't standardarize things. Let your coauthors choose whether they want to annotate your PDF, out comments in Word, or directly write with you in Markdown.
+Markdown actually combines advantages of both, Word and Latex, and in the far future, everyone will use it ;-) But today, noone should be forced to.
+
+### Advantages to other collaborative writing tools:
+
+- **Write in Markdown:** Focus on writing, not on Latex's commands or Word's formatting mess. Paper writing is now possible with simple plain text.
+- **Self-hosting repositories:** use any version control software hosted by you or your institution. Many institutions do not allow research to be hosted at someone else's server. You don't even have to use a remote repository, it's all yours!
+- **Work offline** from any location. That allows you to be independent from Wifi, and still be able to do fancy WYSIWYG writing in Markdown, e.g., using [Typora](http://www.typora.io/). 
+- **Full control:** It's your own folder, your own desktop, your own data. Add analysis scripts, processed data, sketches, ideas, and share anything without being bothered to upload. And by the way, it's only you who decides who has access to your repository.
+- **Fast compilation:** PDF and Word documents are created within seconds. By sharing both, your colleagues can choose how they want to annotate and comment your work. Want to put your paper on a website? It's just a millisecond away.
+- **Fully adaptable:** all the scripts and templates are open-source. Adapt it to your needs. For example, use a specific journal template, or add more features. 
+
 
 ## Requirements 
+
+### OS
+
+*Science.md* uses no OS-specific software and thus should work on any operating system. However, so far it has been tested only on Windows, and I would be glad if someone could test it on Mac and Linux!
 
 ### Editing
 
@@ -33,21 +42,23 @@ If you want to compile your text to LaTeX, PDF, Word, or HTML, you need:
 - [pandoc](http://pandoc.org/installing.html), and the additional [cross-ref filter](https://github.com/lierdakil/pandoc-crossref/releases/). The latter is to be extracted into the same folder as pandoc was installed.
 - `pdflatex`, e.g., from the [TeXlive distribution](https://www.tug.org/texlive/acquire-netinstall.html),
 
-Then some very basic `bash` commands are needed. Most of them are actually standard on Linux or Mac, but Windows sometimes needs a slight additional kick.
+Then some very basic `bash` commands are needed. Most of them are actually standard on Linux and Mac, but Windows sometimes needs a slight additional kick.
 
 - `make`, `cat`, `sed`, `du`, `rm`, `wc`, e.g. from the [cygwin distribution](https://cygwin.com/install.html).
 - *(Optional):* A useful terminal, e.g., `mintty`, also from cygwin.
 
-I recommend creating `.png` equivalents from every `.pdf` figure, such that HTML and Word output can actually display the (originally) `.pdf` figures. There is a handy script for that in `fig/pdf2png.bat`, which requires *mutools*:
+I recommend creating `.png` equivalents from every `.pdf` figure, such that HTML and Word output can actually display the (originally `.pdf`) figures. There is a handy script for this job in `fig/pdf2png.bat`, which requires *mutools*:
 
 - [mutools software](http://mupdf.com/).
 
-**General Note:** Please make sure that all the binaries files of your installed tools are accessible from command line, i.e., registered in the system paths. On Windows, add all folders containing `pandoc`, `pdflatex`, `mutools`, `cygwin/bin`, etc, to the system path via `Control Panel > System > Advanced > Environmental Variables`.
+*General Note: Please make sure that all the binaries files of your installed tools are accessible from command line, i.e., registered in the system paths. On Windows, add all folders containing `pandoc.exe`, `pdflate.exe`, `mutools.exe`, `cygwin/bin/`, etc, to the system path via `Control Panel > System > Advanced > Environmental Variables`.*
 
 
 ## Workflow
 
-I recommend to use the `git` version control to commit stages or publish your version to your self-hosted repository. Ofcourse, also `SVN` would do. There are many GUI tools that can make life easier, too. 
+To start writing your paper, use this *Science.md* repository as a template. Just download the whole repository and copy all its content into the folder of your project, which is probably called "my_nature_paper-no3". 
+
+If you want to version-control or share your work, I'd recommend `git` , but also `svn` or anything else would do, it's all your choice. You can self-host the repository remotely on your own server if you want.  There are many GUI tools for version-control, from which I think [GitHub Desktop](https://desktop.github.com/) is the most easy to use for non-geeks. 
 
 1. **Get up to date with remote changes:** `git pull`, or with *GitHub Desktop* press `Sync`.
 2. **Examine what your colleagues did:** `git diff` or `git log`, or with *GitHub Desktop*'s `History` tab. Or use run the script `release/diff.bat` to create a *latexdiff* between the current and the latest released version.
@@ -57,17 +68,19 @@ I recommend to use the `git` version control to commit stages or publish your ve
 6. **Commit your work:** `git add . && git commit -am "Message"`, or with *GitHub Desktop* press `Commit`.
 7. **Upload your contribution:** `git push`, or with *GitHub Desktop* press `Sync`.
 
+As soon as your paper is ready and went smoothly through the internal review, you can submit it to a journal. You can either submit the Word document, or the LateX document. Some journals require a certain LaTeX template, which should be easy to fill with the content from `release/NAME.tex` that *Science.md* generated for you.
+
 ## Comments
 
-- *Visible* comments can be started within the text by typing a *backslash* followed by your initials, e.g. `\MS I better like invisble comments.` Use the YAML settings in `content/title.md` to add more initials and corresponding colors.
-- *Invisible* comments will not appear in the compiled output and can be of any length. Those comments follow the HTML style guide and look like this: `<!--- this is a comment --->`
+- **Visible** comments can be started within the text by typing a *backslash* followed by your initials, e.g. `\MS I better like invisble comments.` Use the YAML settings in `content/title.md` to add more initials and corresponding colors.
+- **Invisible** comments will not appear in the compiled output and can be of any length. Those comments follow the HTML style guide and look like this: `<!--- this is a comment --->`
 
 ## Figures
 
 - Figure files are located in the folder `fig/`
 - Always try to create `.pdf` files to assure high-quality figures. Only for pure photographs `.jpg` is acceptable.
 - After adding or changing `.pdf` figures, go to `fig/` and run `pdf2png.bat`. This will convert all `.pdf` figures to `.png` equivalents, which are easier to visualize in text editors, Word, and web browsers.
-- Add figures to the Markdown text using `![caption](../fig/name.png)`. Use `.png` extension even for `.pdf` figures, to make them visible for Typora, Word, HTML. The PDF compiled output will always use the corresponding `.pdf` file.
+- Add figures to the Markdown text using `![caption](../fig/name.png){#fig:label}`. Use the  `.png` extension even for `.pdf` figures, to make them visible for Typora, Word, HTML. The PDF compiled output will always use the corresponding `.pdf` file.
 
 ## Literature
 
@@ -75,9 +88,9 @@ Add a citation using `@Eistein1905` or `[see also @Eistein1905]`. The correspond
 
 ## Compile
 
-The test from `content/*.md` can be compiled to Markdown, LaTeX, PDF, or Word. 
+The text from `content/*.md` can be compiled to Markdown, LaTeX, PDF, or Word. 
 
-1. *(once)* open the file `Makefile` or `make.bat` and make sure that the `.md` files are arranged in the corrected order. If you added new files to `content/`, also add them to the given list.
+1. *(Once):* Open the file `Makefile` or `make.bat` and make sure that the `.md` files are arranged in the correct order. If you added new files to `content/`, also add them to the given list.
 2. If you have a capable terminal, run `make -s all` to compile to all available output formats. Use the flag `-s` to reduce verbose output. The following commands are available:
    * Markdown: `make -s`
    * LaTeX:    `make -s tex`
@@ -85,7 +98,7 @@ The test from `content/*.md` can be compiled to Markdown, LaTeX, PDF, or Word.
    * Word:     `make -s docx`
    * all:      `make -s all`
    * clean:    `make clean`
-        
+
 3. *(Or):* On Windows, you can simply double-click the file `make.bat` to compile to all output formats.
 
 ## Release
