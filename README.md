@@ -7,9 +7,7 @@ This framework is designed to make writing easier. It provides lots of helper sc
 
 ### Philosophy
 
-*Have you heared about the ever-lasting discussion between [Word and Latex](http://tex.stackexchange.com/questions/218567/latex-vs-word-improvements-of-latex-over-the-years) [users](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0115069)?* Don't try to convince your coauthors, you'll fail. My philosophy is that everyone is free and can use their favorit tool. Don't standardarize things. Let your coauthors decide whether they want to annotate your PDF, to put comments in Word, or to write directly in Markdown using your repository.
-
-Markdown actually combines advantages of both, Word and Latex, and in the far future, everyone will use it ;-) But today, noone should be forced to.
+*Have you heared about the ever-lasting discussion between [Word and Latex](http://tex.stackexchange.com/questions/218567/latex-vs-word-improvements-of-latex-over-the-years) [users](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0115069)?* Don't try to convince your coauthors, you'll fail. My philosophy is that everyone is free and can use their favorit tool. Don't standardarize things. Let your coauthors decide whether they want to annotate your PDF, to put comments in Word, or to write directly in Markdown using your repository. Markdown actually combines advantages of both, Word and Latex, and in the far future, everyone will use it ;-)
 
 ### Advantages to other collaborative writing tools:
 
@@ -42,9 +40,9 @@ Editing `.md` files with Typora, compiling output with the `Makefile`, and scree
 
 You do not need anything to write your draft, but a simple text editor to edit the files `content/*.md`. Some text editor suggestions:
 
-- Simple, fast, syntax-highlighting: [Notepad2](https://xhmikosr.github.io/notepad2-mod/)
-- Advanced, powerful, incl. Markdown preview: [Atom Editor](https://atom.io/)
-- *(most intuitive)* What you see is what you get: [Typora](https://www.typora.io/#download)
+- Simple, fast, syntax-highlighting: [Notepad2](https://xhmikosr.github.io/notepad2-mod/),
+- Advanced, powerful, incl. Markdown preview: [Atom Editor](https://atom.io/),
+- *(most intuitive)* What you see is what you get: [Typora](https://www.typora.io/#download).
 
 ### Compiling
 
@@ -62,7 +60,8 @@ I recommend creating `.png` equivalents from every `.pdf` figure, such that HTML
 
 - [mutools software](http://mupdf.com/).
 
-*General Note: Please make sure that all the binaries files of your installed tools are accessible from command line, i.e., registered in the system paths. On Windows, add all folders containing `pandoc.exe`, `pdflate.exe`, `mutools.exe`, `cygwin/bin/`, etc, to the system path via `Control Panel > System > Advanced > Environmental Variables`.*
+> *General Note: Please make sure that all the binary files of the installed tools are accessible from command line, i.e., registered in the system paths. E.g. on Windows, add all folders containing `pandoc.exe`, `pdflate.exe`, `mutools.exe`, `cygwin/bin/sed.exe`, ..., to the system path via `Control Panel > System > Advanced > Environmental Variables`.*
+>
 
 
 ## Workflow
@@ -89,13 +88,12 @@ As soon as your paper is ready and went smoothly through the internal review, yo
 ## Figures
 
 - Figure files are located in the folder `fig/`
-- Always try to create `.pdf` files to assure high-quality figures. Only for pure photographs `.jpg` is acceptable.
-- After adding or changing `.pdf` figures, go to `fig/` and run `pdf2png.bat`. This will convert all `.pdf` figures to `.png` equivalents, which are easier to visualize in text editors, Word, and web browsers.
+- Always try to create `.pdf` files to assure high-quality figures. Only for pure photographs `.jpg` is acceptable. After adding or changing `.pdf` figures, go to `fig/` and run `pdf2png.bat`. This will convert all `.pdf` figures to `.png` equivalents, which are easier to visualize in text editors, Word, and web browsers.
 - Add figures to the Markdown text using `![caption](../fig/name.png){#fig:label}`. Use the  `.png` extension even for `.pdf` figures, to make them visible for Typora, Word, HTML. The PDF compiled output will always use the corresponding `.pdf` file.
 
 ## Literature
 
-Add a citation using `@Eistein1905` or `[see also @Eistein1905]`. The corresponding name must be appended to `lit/references.bib`. Those BibTeX entries can be found everywhere in the internet, e.g. using the *google scholar*  search engine or export from any reference manager.
+Add a citation using `@Eistein1905` or `[see also @Eistein1905]`. The corresponding name must be appended to `lit/references.bib`. Those BibTeX entries can be found everywhere in the internet, e.g. using the *google scholar* search engine or the export feature of any reference manager.
 
 ## Compile
 
@@ -126,7 +124,7 @@ The currently compiled files are stored in `release/` and can be copied to an ex
 - citation: `@Einstein2015`, or `[see @Einstein2015; @Newton1730, and references therein]`
 - section: `# Section`, `## Subsection`, `### Subsubsection {#sec:label}`, ...
 - figure: `![caption](../fig/file.png){#fig:label}`
-- math: `$x=1$`, `$$ A=B $$ {#eq:label}`
+- math: `$x=1$`, `$$ A=B $$ {#eq:label}`, `$$\begin{aligned} A &= B \\ C &= A+B \end{aligned}$$`
 - reference: `@Fig:label`, `@sec:label`, `@eq:label`, `@tbl:label`
 - comments: `\XX text until two newlines`, `\MS personalized comment`, `<!--- invisble comment --->`
 - code: ``code``
