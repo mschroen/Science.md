@@ -1,9 +1,20 @@
 # science.md
-Framework for drafting scientific documents: Write (Markdown), Compile (PDF, Word, HTML), Share (Git)
+Framework for drafting scientific documents: *Write* (Markdown), *Compile* (PDF, Word, HTML), *Share* (Git).
 
 ## Concept
 
 This framework is designed to make writing easier. It provides lots of helper scripts to do the work for you, like building the manuscript PDF, creating folders for milestones, generating diffs, and more. You can focus on writing, while formatting, compiling, and collaborating just works for everyone like a charm.
+
+**Advantages to other collaborative writing tools:**
+
+- *Write in Markdown:* Focus on writing, not on tex commands. Paper writing is now possible with simple plain text.
+- *Self-hosting repositories:* use any version control software hosted by you or your institution. Many institutions do not allow research to be hosted at someone elses server.
+- *Work offline* from any location. That allows you to be independent from Wifi, and still be able to do fancy WYSIWYG writing in Markdown, e.g., using [Typora](http://www.typora.io/).
+- *Full control:* It's your own folder, your own desktop. Add data files and share anything wihtout uploading. And it's you who decides who has access to your repository.
+- *Fast compilation:* PDF and Word documents are created within seconds. By sharing both, your colleagues can choose how they want to annotate and comment your work. 
+- *Fully adaptable:* all the scripts and templates are open-source. Adapt it to your needs. For example, use a specific journal template, or add more features. 
+
+Everyone is free to use their favorit tool. Don't standardarize things. Let your coauthors choose whether they want to annotate your PDF, out comments in Word, or directly write with you in Markdown.
 
 ## Requirements 
 
