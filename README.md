@@ -67,15 +67,15 @@ Add a citation using `@Eistein1905` or `[see also @Eistein1905]`. The correspond
 The test from `content/*.md` can be compiled to Markdown, LaTeX, PDF, or Word. 
 
 1. *(once)* open the file `Makefile` or `make.bat` and make sure that the `.md` files are arranged in the corrected order. If you added new files to `content/`, also add them to the given list.
-2. Compile:
-        a. If you have a capable terminal, run `make -s all` to compile to all available output formats. Use the flag `-s` to reduce verbose output. The following commands are available: 
-            - Markdown: make -s
-            - LaTeX:    make -s tex
-            - PDF:      make -s pdf
-            - Word:     make -s docx
-            - all:      make -s all
-            - clean:    make clean
-        b. On Windows, you can simply double-click the file `make.bat` to compile to all output formats.
+2. If you have a capable terminal, run `make -s all` to compile to all available output formats. Use the flag `-s` to reduce verbose output. The following commands are available:
+   * Markdown: `make -s`
+   * LaTeX:    `make -s tex`
+   * PDF:      `make -s pdf`
+   * Word:     `make -s docx`
+   * all:      `make -s all`
+   * clean:    `make clean`
+        
+3. *(Or):* On Windows, you can simply double-click the file `make.bat` to compile to all output formats.
 
 ## Release
 
@@ -96,10 +96,11 @@ The currently compiled files are stored in `release/` and can be copied to an ex
 - comments: `\XX text until two newlines`, `\MS personalized comment`, `<!--- invisble comment --->`
 - code: ``code``
 - table:
-
+    ```
     |  A  |               B | C     |
     | --: | --------------: | :---: |
     |  42 |         $y=x+1$ | True  |
     |  23 |            None | False |
 
     Table: Caption. {#tbl:label}
+    ```
