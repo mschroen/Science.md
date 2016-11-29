@@ -1,0 +1,12 @@
+# Auxillery files from data processing/analysis
+
+.RData
+.Rhistory
+.ipynb_checkpoints
+__pycache__
+
+
+# Private folders and backup folders
+
+bck
+_private_

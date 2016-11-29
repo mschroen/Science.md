@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+$for(author-meta)$
+  <meta name="author" content="$author-meta$">
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$">
+$endif$
+$if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  <style type="text/css">code{white-space: pre;}</style>
+$if(quotes)$
+  <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+$endif$
+$if(highlighting-css)$
+  <style type="text/css">
+$highlighting-css$
+  </style>
+$endif$
+$for(css)$
+  <link rel="stylesheet" href="$css$">
+$endfor$
+$if(math)$
+  $math$
+$endif$
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+html {
+    background-color: #EEEEEE;
+    }
+body {
+    font-family: Garamond, Cambria, Georgia, sans-serif;
+    font-size: 120%;
+    margin: 2% 5%;
+    padding: 20px;
+    border: 5px solid #DDDDDD;
+    background-color: #FFFFFF; }
+h1 {
+    margin: 1em 0;
+    border-bottom: 5px solid #EEEEEE;
+    }
+
+h1.title {
+    width: 70%;
+    background-color: #FFFFFF;
+    border-bottom: 6px solid #000000;
+    padding: 0.5em 0;
+    margin: 0px auto 1.5em auto;
+    font-size: 250%;
+    text-align: center;
+    }
+section.abstract, table { margin: 1em auto; width: 80% }
+section.acknowledgements { }
+figcaption, section.acknowledgements, #refs, table caption, td, th { font-size: 86%; }
+.affiliation { font-size: 75%; }
+img { max-width: 90%; }
+th { border: 1px solid black; border-width: 1px 0; }
+</style>
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+<body>
+$for(include-before)$
+$include-before$
+$endfor$
+$if(title)$
+<header>
+<h1 class="title">$title$</h1>
+$if(subtitle)$
+<p class="subtitle">$subtitle$</p>
+$endif$
+<!-- MARTIN -->
+    <p class="authors">$for(author)$ $if(author.name)$
+    <span>$author.name$<sup>$author.am$</sup></span>, 
+    $else$<span>$author$<sup>1</sup></span>$endif$ $endfor$</p>
+    <p class="affiliation">$for(affiliation)$ $if(affiliation.name)$
+    <span><sup>$affiliation.am$</sup> $affiliation.name$</span><br>
+    $else$<span><sup>1</sup> $affiliation$</span>$endif$ $endfor$</p>
+<!-- ------ -->
+$if(date)$
+<p class="date">$date$</p>
+$endif$
+</header>
+$endif$
+$if(toc)$
+<nav id="$idprefix$TOC">
+$toc$
+</nav>
+$endif$
+<!-- MARTIN -->
+    <section class="abstract"><b>Abstract:</b> $abstract$
+    <p><b>Keywords:</b> $for(keypoints)$ $keypoints$, $endfor$</p></section>
+<!-- ------ -->
+$body$
+<!-- MARTIN -->
+<section class="acknowledgements"><h3>Acknowledgements</h3>$acknowledgements$</section>
+<!-- ------ -->
+$for(include-after)$
+$include-after$
+$endfor$
+</body>
+</html>
