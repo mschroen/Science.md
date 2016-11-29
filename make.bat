@@ -1,6 +1,6 @@
+@echo off
 REM science.md
 REM A windows batch file which does exactly the same thing as `make all`.
-@echo off
 REM Set NAME of the project, defaults to the parent folder name.
 for %%a in (.) do set NAME=%%~nxa
 @echo %NAME%
@@ -14,6 +14,7 @@ cd content && cat ^
   methods.md ^
   results.md ^
   conclusion.md ^
+  appendix.md ^
   acknowledgements.md ^
   bib.md ^
   > ../release/%NAME%.md

@@ -7,7 +7,7 @@ This framework is designed to make writing easier. It provides lots of helper sc
 
 ### Philosophy
 
-*Have you heared about the ever-lasting discussion between Word and Latex users?* Don't try to convince your coauthors, you'll fail. My philosophy is that everyone is free and can use their favorit tool. Don't standardarize things. Let your coauthors decide whether they want to annotate your PDF, to put comments in Word, or to write directly in Markdown using your repository.
+*Have you heared about the ever-lasting discussion between [Word and Latex](http://tex.stackexchange.com/questions/218567/latex-vs-word-improvements-of-latex-over-the-years) [users](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0115069)?* Don't try to convince your coauthors, you'll fail. My philosophy is that everyone is free and can use their favorit tool. Don't standardarize things. Let your coauthors decide whether they want to annotate your PDF, to put comments in Word, or to write directly in Markdown using your repository.
 
 Markdown actually combines advantages of both, Word and Latex, and in the far future, everyone will use it ;-) But today, noone should be forced to.
 
