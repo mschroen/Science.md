@@ -11,6 +11,10 @@ This framework is designed to make writing easier. It provides lots of helper sc
 
 Have you heared about the ever-lasting discussion between Word and Latex users? Don't try to convince your coauthors, you'll fail. My philosophy is that everyone is free and can use their favorit tool. Don't standardarize things. Let your coauthors decide whether they want to annotate your PDF, to put comments in Word, or to write directly in Markdown using your repository. Markdown actually combines advantages of both, Word and Latex, and in the far future, everyone will use it ;-) (see also [#Further_reading](#further-reading))
 
+## Technology
+
+No fancy hacking. No strange dependencies. *Science.md* only uses standard shell commands, and well-accepted software tools (Pandoc, LaTeX, latexdiff, mutools). Even the templates are based on Pandoc's defaults with only tiny scholarly adpations. To be honest, the whole magic boils down to the Makefile and a few short scripts that let you process your manuscript as easy as pressing a button.
+
 ### Advantages to other collaborative writing tools:
 
 - **Write in Markdown:** Focus on writing, not on Latex's commands or Word's formatting mess. Paper writing is now possible with simple plain text.
