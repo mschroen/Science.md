@@ -11,7 +11,7 @@ This framework is designed to make writing easier. It provides lots of helper sc
 
 Have you heared about the ever-lasting discussion between Word and Latex users? Don't try to convince your coauthors, you'll fail. My philosophy is that everyone is free and can use their favorit tool. Don't standardarize things. Let your coauthors decide whether they want to annotate your PDF, to put comments in Word, or to write directly in Markdown using your repository. Markdown actually combines advantages of both, Word and Latex, and in the far future, everyone will use it ;-) (see also [#Further_reading](#further-reading))
 
-## Technology
+### Technology
 
 No fancy hacking. No strange dependencies. *Science.md* only uses standard shell commands, and well-accepted software tools (Pandoc, LaTeX, latexdiff, mutools). Even the templates are based on Pandoc's defaults with only tiny scholarly adpations. To be honest, the whole magic boils down to the Makefile and a few short scripts that let you process your manuscript as easy as pressing a button.
 
@@ -86,22 +86,22 @@ If you want to version-control or share your work, I'd recommend `git` , but als
 
 As soon as your paper is ready and went smoothly through the internal review, you can submit it to a journal. You can either submit the Word document, or the LateX document. Some journals require a certain LaTeX template, which should be easy to fill with the content from `release/NAME.tex` that *Science.md* generated for you.
 
-## Comments
+### Comments
 
 - **Visible** comments can be started within the text by typing a *backslash* followed by your initials, e.g. `\MS I better like invisble comments.` Use the YAML settings in `content/title.md` to add more initials and corresponding colors.
 - **Invisible** comments will not appear in the compiled output and can be of any length. Those comments follow the HTML style guide and look like this: `<!--- this is a comment --->`
 
-## Figures
+### Figures
 
 - Figure files are located in the folder `fig/`
 - Always try to create `.pdf` files to assure high-quality figures. Only for pure photographs `.jpg` is acceptable. After adding or changing `.pdf` figures, go to `fig/` and run `pdf2png.bat`. This will convert all `.pdf` figures to `.png` equivalents, which are easier to visualize in text editors, Word, and web browsers.
 - Add figures to the Markdown text using `![caption](../fig/name.png){#fig:label}`. Use the  `.png` extension even for `.pdf` figures, to make them visible for Typora, Word, HTML. The PDF compiled output will always use the corresponding `.pdf` file.
 
-## Literature
+### Literature
 
 Add a citation using `@Eistein1905` or `[see also @Eistein1905]`. The corresponding name must be appended to `lit/references.bib`. Those BibTeX entries can be found everywhere in the internet, e.g. using the *google scholar* search engine or the export feature of any reference manager.
 
-## Compile
+### Compile
 
 The text from `content/*.md` can be compiled to Markdown, LaTeX, PDF, or Word. 
 
@@ -116,16 +116,16 @@ The text from `content/*.md` can be compiled to Markdown, LaTeX, PDF, or Word.
 
 3. *(Or):* On Windows, you can simply double-click the file `make.bat` to compile to all output formats.
 
-## Release
+### Release
 
 The currently compiled files are stored in `release/` and can be copied to an extra folder, `release/version[Date]-[Time]`, to permanently save one version, which can be used later to perform diffs, for instance. This process has been automated, simply go to `release/` and run `release.bat`.
 
-## Difference between two versions
+### Difference between two versions
 
 - The difference between two commits can be visualised with `git diff`, or using the *GitHub Desktop* GUI.
 - The difference between two released versions can be visualised using the `latexdiff` script that usually comes with the `texlive` distribution. Edit the file `diff.bat` by specifiying the two folders which you want to compare (the *new* version defaults to the current files in the `release/`folder). Then run `diff.bat`. It creates diffs from the two `.tex` files in the given folders and compiles a new `diff.pdf` where differences are nicely highlighted.
 
-# Markdown Syntax
+## Markdown Syntax
 
 - citation: `@Einstein2015`, or `[see @Einstein2015; @Newton1730, and references therein]`
 - section: `# Section`, `## Subsection`, `### Subsubsection {#sec:label}`, ...
