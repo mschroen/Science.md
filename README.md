@@ -1,7 +1,7 @@
 # Science.md
 An easy framework for drafting scientific documents: *Write* (Markdown), *Compile* (PDF, Word, HTML), *Share*.
 
-![Science.md Howto](https://cloud.githubusercontent.com/assets/7942719/20758090/a3684c0c-b710-11e6-9927-d7b66f528723.png)
+![Science.md Howto](https://cloud.githubusercontent.com/assets/7942719/20758851/0b97e1be-b713-11e6-955e-e6d0a96b3a59.png)
 
 ## Concept
 
