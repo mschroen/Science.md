@@ -1,6 +1,8 @@
 # Science.md
 An easy framework for drafting scientific documents: *Write* (Markdown), *Compile* (PDF, Word, HTML), *Share*.
 
+![Science.md Howto](https://cloud.githubusercontent.com/assets/7942719/20758090/a3684c0c-b710-11e6-9927-d7b66f528723.png)
+
 ## Concept
 
 This framework is designed to make writing easier. It provides lots of helper scripts to do the work for you, like building the manuscript PDF, creating folders for milestones, generating diffs, and more. You can focus on writing, while formating, compiling, and collaborating will just work like a charm.
