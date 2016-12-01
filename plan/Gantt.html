@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Gantt</title>
+    <style type="text/css">code{white-space: pre;}</style>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <script src="templates/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true,
+                gantt: {
+                    barHeight:30,
+                    fontSize:10,
+                    numberSectionStyles:2,
+                    axisFormatter: [
+                        // Within a day
+                        ["%I:%M", function (d) {
+                            return d.getHours();
+                        }],
+                        // Monday a week
+                        ["week %U", function (d) {
+                            return d.getDay() == 1;
+                        }],
+                        // Day within a week (not monday)
+                        ["%a %d", function (d) {
+                            return d.getDay() && d.getDate() != 1;
+                        }],
+                        // within a month
+                        ["%b %d", function (d) {
+                            return d.getDate() != 1;
+                        }],
+                        // Month
+                        ["%m-%y", function (d) {
+                            return d.getMonth();
+                        }]
+                    ]
+                }});</script>
+    <style type='text/css'>/*from Typora Gantt style*/
+        html, body {overflow-x: initial !important;}
+        .mermaid .label { color: rgb(51, 51, 51); }
+        .node rect, .node circle, .node ellipse, .node polygon { fill: rgb(236, 236, 255); stroke: rgb(204, 204, 255); stroke-width: 1px; }
+        .edgePath .path { stroke: rgb(51, 51, 51); }
+        .edgeLabel { background-color: rgb(232, 232, 232); }
+        .cluster rect { fill: rgb(255, 255, 222) !important; rx: 4 !important; stroke: rgb(170, 170, 51) !important; stroke-width: 1px !important; }
+        .cluster text { fill: rgb(51, 51, 51); }
+        .actor { stroke: rgb(204, 204, 255); fill: rgb(236, 236, 255); }
+        text.actor { fill: black; stroke: none; }
+        .actor-line { stroke: grey; }
+        .messageLine0 { stroke-width: 1.5; stroke: rgb(51, 51, 51); }
+        .messageLine1 { stroke-width: 1.5; stroke: rgb(51, 51, 51); }
+        #arrowhead { fill: rgb(51, 51, 51); }
+        #crosshead path { fill: rgb(51, 51, 51) !important; stroke: rgb(51, 51, 51) !important; }
+        .messageText { fill: rgb(51, 51, 51); stroke: none; }
+        .labelBox { stroke: rgb(204, 204, 255); fill: rgb(236, 236, 255); }
+        .labelText { fill: black; stroke: none; }
+        .loopText { fill: black; stroke: none; }
+        .loopLine { stroke-width: 2; stroke: rgb(204, 204, 255); }
+        .note { stroke: rgb(170, 170, 51); fill: rgb(255, 245, 173); }
+        .noteText { fill: black; stroke: none; font-family: Verdana, Arial; font-size: 14px; }
+        .section { stroke: none; opacity: 0.2; }
+        .section0 { fill: rgba(102, 102, 255, 0.490196); }
+        .section2 { fill: rgb(255, 244, 0); }
+        .section1, .section3 { fill: white; opacity: 0.2; }
+        .sectionTitle0 { fill: rgb(51, 51, 51); }
+        .sectionTitle1 { fill: rgb(51, 51, 51); }
+        .sectionTitle2 { fill: rgb(51, 51, 51); }
+        .sectionTitle3 { fill: rgb(51, 51, 51); }
+        .sectionTitle { text-anchor: start; font-size: 11px; }
+        .grid .tick { stroke: lightgrey; opacity: 0.3; shape-rendering: crispEdges; }
+        .grid path { stroke-width: 0; }
+        .today { fill: none; stroke: red; stroke-width: 2px; }
+        .task { stroke-width: 2; }
+        .taskText { text-anchor: middle; font-size: 11px; }
+        .taskTextOutsideRight { fill: black; text-anchor: start; font-size: 11px; }
+        .taskTextOutsideLeft { fill: black; text-anchor: end; font-size: 11px; }
+        .taskText0, .taskText1, .taskText2, .taskText3 { fill: white; }
+        .task0, .task1, .task2, .task3 { fill: rgb(138, 144, 221); stroke: rgb(83, 79, 188); }
+        .taskTextOutside0, .taskTextOutside2 { fill: black; }
+        .taskTextOutside1, .taskTextOutside3 { fill: black; }
+        .active0, .active1, .active2, .active3 { fill: rgb(191, 199, 255); stroke: rgb(83, 79, 188); }
+        .activeText0, .activeText1, .activeText2, .activeText3 { fill: black !important; }
+        .done0, .done1, .done2, .done3 { stroke: grey; fill: lightgrey; stroke-width: 2; }
+        .doneText0, .doneText1, .doneText2, .doneText3 { fill: black !important; }
+        .crit0, .crit1, .crit2, .crit3 { stroke: rgb(255, 136, 136); fill: red; stroke-width: 2; }
+        .activeCrit0, .activeCrit1, .activeCrit2, .activeCrit3 { stroke: rgb(255, 136, 136); fill: rgb(191, 199, 255); stroke-width: 2; }
+        .doneCrit0, .doneCrit1, .doneCrit2, .doneCrit3 { stroke: rgb(255, 136, 136); fill: lightgrey; stroke-width: 2; cursor: pointer; shape-rendering: crispEdges; }
+        .doneCritText0, .doneCritText1, .doneCritText2, .doneCritText3 { fill: black !important; }
+        .activeCritText0, .activeCritText1, .activeCritText2, .activeCritText3 { fill: black !important; }
+        .titleText { text-anchor: middle; font-size: 18px; fill: black; }
+        .node text { font-family: Verdana, Arial; font-size: 14px; }
+        div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: Verdana, Arial; font-size: 12px; background: rgb(255, 255, 222); border: 1px solid rgb(170, 170, 51); border-radius: 2px; pointer-events: none; z-index: 100; }
+    * { font-family: Arial, sans-serif }
+</style>
+</head>
+<body>
+<h1 id="gantt">Gantt</h1>
+<pre class="mermaid">gantt    
+    dateFormat  YYYY-MM-DD
+    title Schedule for the manuscript preparation
+
+    section Albert
+    Prepare data            : A1, 2016-12-01, 2d
+    Write method section    : A2, 2016-12-08, 2d
+    Implement comments      : A3, 2016-12-12, 12h
+    Polish and submit       : A4, 2016-12-15, 1d
+
+    section Isaac
+    Analyse data            : B1, after A1, 2d
+    Write results           : B2, after B1, 2d
+    Implement comments      : B3, 2016-12-12, 1d
+
+    section Internal Review
+    Intermediate review     : I1, after B2, 1d
+    Final review            : I2, after B3, 1d</pre>
+<h2 id="other-tasks">Other Tasks</h2>
+<ul>
+<li>[x] Tidy up desktop</li>
+<li>[ ] Prepare submission party</li>
+</ul>
+</body>
+</html>
