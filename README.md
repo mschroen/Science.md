@@ -15,7 +15,7 @@ This product aims to serve everyone and does not try to convince people to use a
 - *Console-geeks and Explorer-clickers* (All scripts work from terminal as well as by a gentle double-click)
 - *Online-addicted and offline-nostalgist* (It's all local, but you can sync with a remote repo any time)
 - *Security-paranoiacs and white-hearted* (No dependency on someone else's server, it's all yours!)
-- *Trump and Hillary*
+- *Hillary and Donald*
 
 ### Technology
 
