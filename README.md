@@ -7,9 +7,15 @@ An easy framework for drafting scientific documents: *Write* (Markdown), *Compil
 
 This framework is designed to make writing easier. It provides lots of helper scripts to do the work for you, like building the manuscript PDF, creating folders for milestones, generating diffs, and more. You can focus on writing, while formating, compiling, and collaborating will just work like a charm.
 
-### Philosophy
+### Philosophy: 100% tolerance, 0% borders
 
-Have you heared about the ever-lasting discussion between Word and Latex users? Don't try to convince your coauthors, you'll fail. My philosophy is that everyone is free and can use their favorit tool. Don't standardarize things. Let your coauthors decide whether they want to annotate your PDF, to put comments in Word, or to write directly in Markdown using your repository. Markdown actually combines advantages of both, Word and Latex, and in the far future, everyone will use it ;-) (see also [#Further_reading](#further-reading))
+This product aims to serve everyone and does not try to convince people to use a specific platform or programming language. 
+
+- *Latex-Lovers and Word-Ethusiasts* (Writers meet in the middle with Markdown, Colleagues can put comments in PDF or Word)
+- *Console-geeks and Explorer-clickers* (All scripts work from terminal as well as by a gentle double-click)
+- *Online-addicted and offline-nostalgist* (It's all local, but you can sync with a remote repo any time)
+- *Security-paranoiacs and white-hearted* (No dependency on someone else's server, it's all yours!)
+- *Trump and Hillary*
 
 ### Technology
 
@@ -26,14 +32,15 @@ No fancy hacking. No strange dependencies. *Science.md* only uses standard shell
 
 ## Screenshots
 
-Editing `.md` files with Typora, compiling output with the `Makefile`, and screenshots of output files: PDF, Latexdiff, Word, HTML.
+Editing `.md` files with Typora, compiling output with the `Makefile`, and screenshots of output files: PDF, Latexdiff, Word, HTML. Last shot is from Gantt creation using simple Markdown text (converted website is displayed in the background).
 
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png" width="15%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png" width="15%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png" width="15%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png" width="15%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png" width="15%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png" width="15%"/></a> 
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png" width="20%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png" width="20%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png" width="20%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png" width="20%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png" width="20%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png" width="20%"/></a> 
+<a href="https://cloud.githubusercontent.com/assets/7942719/20797779/34f38646-b7d4-11e6-99eb-16626c398a87.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20797779/34f38646-b7d4-11e6-99eb-16626c398a87.png" width="20%"/></a> 
 
 
 ## Requirements 
@@ -112,7 +119,7 @@ The text from `content/*.md` can be compiled to Markdown, LaTeX, PDF, or Word.
    * PDF:      `make -s pdf`
    * Word:     `make -s docx`
    * all:      `make -s all`
-   * clean:    `make clean`
+   * tidy up:  `make clean`
 
 3. *(Or):* On Windows, you can simply double-click the file `make.bat` to compile to all output formats.
 
@@ -133,7 +140,7 @@ The currently compiled files are stored in `release/` and can be copied to an ex
 - math: `$x=1$`, `$$ A=B $$ {#eq:label}`, `$$\begin{aligned} A &= B \\ C &= A+B \end{aligned}$$`
 - reference: `@Fig:label`, `@sec:label`, `@eq:label`, `@tbl:label`
 - comments: `\XX text until two newlines`, `\MS personalized comment`, `<!--- invisble comment --->`
-- code: ``code``
+- code: `` `code` ``
 - table:
     ```
     |  A  |               B | C     |
