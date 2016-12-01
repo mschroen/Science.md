@@ -34,13 +34,13 @@ No fancy hacking. No strange dependencies. *Science.md* only uses standard shell
 
 Editing `.md` files with Typora, compiling output with the `Makefile`, and screenshots of output files: PDF, Latexdiff, Word, HTML. Last shot is from Gantt creation using simple Markdown text (converted website is displayed in the background).
 
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png" width="15%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png" width="15%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png" width="15%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png" width="15%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png" width="15%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png" width="15%"/></a> 
-<a href="https://cloud.githubusercontent.com/assets/7942719/20797779/34f38646-b7d4-11e6-99eb-16626c398a87.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20797779/34f38646-b7d4-11e6-99eb-16626c398a87.png" width="15%"/></a> 
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png" width="20%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png" width="20%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png" width="20%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png" width="20%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png" width="20%"/></a>
+<a href="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png" width="20%"/></a> 
+<a href="https://cloud.githubusercontent.com/assets/7942719/20797779/34f38646-b7d4-11e6-99eb-16626c398a87.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20797779/34f38646-b7d4-11e6-99eb-16626c398a87.png" width="20%"/></a> 
 
 
 ## Requirements 
