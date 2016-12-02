@@ -9,7 +9,9 @@
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
     <![endif]-->
-    <script src="templates/mermaid.min.js"></script>
+    $for(header-includes)$
+        $header-includes$
+    $endfor$
     <script>mermaid.initialize({startOnLoad:true,
                 gantt: {
                     barHeight:30,
@@ -19,14 +21,6 @@
                         // Within a day
                         ["%I:%M", function (d) {
                             return d.getHours();
-                        }],
-                        // Monday a week
-                        ["week %U", function (d) {
-                            return d.getDay() == 1;
-                        }],
-                        // Day within a week (not monday)
-                        ["%a %d", function (d) {
-                            return d.getDay() && d.getDate() != 1;
                         }],
                         // within a month
                         ["%b %d", function (d) {

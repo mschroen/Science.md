@@ -211,7 +211,8 @@ $endif$
     $for(comments)$
     \def\$comments.ini$#1\par{\setlength{\fboxsep}{1pt}\colorbox{$comments.col$}{\textcolor{white}{\texttt{$comments.ini$}}} \color{$comments.col$} #1\color{black}}
     $endfor$
-    \newcommand{\TODO}{\setlength{\fboxsep}{1pt}\colorbox{black!50}{\textcolor{white}{TODO}} }
+    \newcommand{\TODO}{\setlength{\fboxsep}{2pt}\colorbox{blue}{\textcolor{white}{\texttt{TODO}}} }
+
 %%%
 
 $for(header-includes)$
