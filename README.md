@@ -150,11 +150,14 @@ The currently compiled files are stored in `release/` and can be copied to an ex
 
     Table: Caption. {#tbl:label}
     ```
-    
+
 ## Further reading
 
-1. StackExchange TeX (2014): [*LaTeX vs Word; improvements of LaTeX over the years*](http://tex.stackexchange.com/questions/218567/latex-vs-word-improvements-of-latex-over-the-years)
-2. D. Krishnamurthy (2015): [*Writing Technical Papers with Markdown*](http://blog.kdheepak.com/writing-papers-with-markdown.html)
-3. Ch. Krycho (2015): [*Academic Markdown and Citations*](http://www.chriskrycho.com/2015/academic-markdown-and-citations.html)
-4. D. Leijen (2016): [*Madoko - Write Beautiful Documents*](https://www.madoko.net/)
-5. Knauff and Nejasmic (2015): [*An Efficiency Comparison of Document Preparation Systems Used in Academic Research and Development*](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0115069)
+1. G. Wilson et al. (2016): [*Good Enough Practices in Scientific Computing*](https://arxiv.org/abs/1609.00037)
+2. A. Bartlett (2016): [Git for Humans](https://speakerdeck.com/alicebartlett/git-for-humans)
+3. StackExchange TeX (2014): [*LaTeX vs Word; improvements of LaTeX over the years*](http://tex.stackexchange.com/questions/218567/latex-vs-word-improvements-of-latex-over-the-years)
+4. D. Krishnamurthy (2015): [*Writing Technical Papers with Markdown*](http://blog.kdheepak.com/writing-papers-with-markdown.html)
+5. Ch. Krycho (2015): [*Academic Markdown and Citations*](http://www.chriskrycho.com/2015/academic-markdown-and-citations.html)
+6. D. Leijen (2016): [*Madoko - Write Beautiful Documents*](https://www.madoko.net/)
+7. Knauff and Nejasmic (2015): [*An Efficiency Comparison of Document Preparation Systems Used in Academic Research and Development*](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0115069)
+8. Marcio von Muhlen (2014): [*We Need a Github of Science*](http://marciovm.com/i-want-a-github-of-science/)
