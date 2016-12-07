@@ -138,9 +138,9 @@ The currently compiled files are stored in `release/` and can be copied to an ex
 - section: `# Section`, `## Subsection`, `### Subsubsection {#sec:label}`, ...
 - figure: `![caption](../fig/file.png){#fig:label}`
 - math: `$x=1$`, `$$ A=B $$ {#eq:label}`, `$$\begin{aligned} A &= B \\ C &= A+B \end{aligned}$$`
-- reference: `@Fig:label`, `@sec:label`, `@eq:label`, `@tbl:label`
-- comments: `\XX text until two newlines`, `\MS personalized comment`, `<!--- invisble comment --->`
-- code: `` `code` ``
+- reference: `@Fig:label`, `[@Fig:label1; @fig:label1]`, `@sec:label`, `@eq:label`, `@tbl:label`, `[Appendix @sec:label]`, `[Appendices @sec:label1; Appendices @sec:label1]`
+- comments: `\XX text until two newlines`, `\MS personalized comment` (defined in *content/title.md*), `<!--- invisible comment --->`
+- code: `` `code` `` or paragraphs with a left-padding of 4 spaces 
 - table:
     ```
     |  A  |               B | C     |

@@ -69,6 +69,7 @@ $for(header-includes)$
 $endfor$
 </head>
 <body>
+<script>if (!navigator.onLine) document.write('<div style="background-color: #FFEEEE; color: red; padding: 0.5em; font-family: Consolas, mono-space"><b>Can not load Math if you are offline!</b> If you need offline math support: (1) download MathJax, (2) provide its local path to pandoc via the Makefile, (3) remove this annoying message from the html template.</div>');</script>
 $for(include-before)$
 $include-before$
 $endfor$
