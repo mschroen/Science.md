@@ -1,6 +1,6 @@
 @echo off
 REM set folder names of released versions (. means the current (i.e. release) folder)
-set OLD=version20161129-172010
+set OLD=version20161209-145947
 set NEW=.
 
 REM use command line arguments, eg. diff.bat file1.tex file2.tex

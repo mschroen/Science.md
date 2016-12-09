@@ -1,4 +1,4 @@
-\documentclass[A4paper,]{article}
+\documentclass[a4paper,]{article}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -23,9 +23,12 @@
 }{}
 \usepackage[margin=1in]{geometry}
 \usepackage[unicode=true]{hyperref}
-\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+%%% Science.md
+    %\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+    \usepackage[usenames,dvipsnames]{color}
+%%%    
 \hypersetup{
-            pdftitle={Comparing Gravitational Theories},
+            pdftitle={A Review of Gravitational Theories},
             colorlinks=true,
             linkcolor=Maroon,
             citecolor=Blue,
@@ -66,7 +69,8 @@
 \def\fps@figure{htbp}
 \makeatother
 
-%%% MARTIN
+%%% Science.md
+    % Header and Footer
     \usepackage{fancyhdr}
     \pagestyle{fancy}
     \fancyhead{}
@@ -75,10 +79,17 @@
     \fancyfoot{}
     \fancyfoot[LE,RO]{\thepage}
     
+    % Comments
+    \definecolor{gray}{rgb}{0.6,0.6,0.6}
+    \def\XX#1\par{\setlength{\fboxsep}{1pt}\colorbox{gray}{\textcolor{white}{\normalfont \texttt{XX}}} \color{gray} #1\color{black}\par}
+        \def\AE#1\par{\setlength{\fboxsep}{1pt}\colorbox{cyan}{\textcolor{white}{\normalfont \texttt{AE}}} \color{cyan} #1\color{black}\par}
+        \def\IN#1\par{\setlength{\fboxsep}{1pt}\colorbox{magenta}{\textcolor{white}{\normalfont \texttt{IN}}} \color{magenta} #1\color{black}\par}
+    
+    % TODO
+    \newcommand{\TODO}{\setlength{\fboxsep}{2pt}\colorbox{blue}{\textcolor{white}{\texttt{TODO}}} }
+
+    % Misc packages
     \usepackage[version=4]{mhchem} % easy chem formulae with ce{H2O}
-        \def\AE#1\par{\setlength{\fboxsep}{1pt}\colorbox{cyan}{\textcolor{white}{\texttt{AE}}} \color{cyan} #1\color{black}}
-        \def\IN#1\par{\setlength{\fboxsep}{1pt}\colorbox{magenta}{\textcolor{white}{\texttt{IN}}} \color{magenta} #1\color{black}}
-        \newcommand{\TODO}{\setlength{\fboxsep}{1pt}\colorbox{black!50}{\textcolor{white}{TODO}} }
 %%%
 
 \usepackage{subfig}
@@ -98,8 +109,8 @@
 \floatname{codelisting}{Listing}
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 
-\title{Comparing Gravitational Theories}
-%%% MARTIN
+\title{A Review of Gravitational Theories}
+%%% Science.md
     \usepackage{authblk}
 
           \author[1,C]{A. Einstein}
@@ -119,7 +130,7 @@
 \maketitle
 \begin{abstract}
 The classical theory of gravitation has been revised to find a new relativistic theory of gravitation. Impact for society will be tremendous.
-%%% MARTIN
+%%% Science.md
 
     \vspace*{1em}
     Keywords:  Classical mechanics,  Relativistic mechanics, 
@@ -128,28 +139,33 @@ The classical theory of gravitation has been revised to find a new relativistic 
 
 \section{Introduction}\label{sec:intro}
 
-Recently, the theory of classical mechanics has been presented by Newton (\protect\hyperlink{ref-Newton1730}{1730}).
+Recently, the theory of classical mechanics has been presented by Newton (\protect\hyperlink{ref-Newton1730}{1730}). \emph{\IN Good idea to cite my paper here!} \emph{\AE It's a pleasure, Isaac.}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \TODO 
 
 \section{Material and Methods}\label{material-and-methods}
 
-We are using the method of \emph{intuition} to invent another theory (see Einstein \protect\hyperlink{ref-Einstein1905}{1905} and references therein). Occassionally, formulas were used, too (see e.g., eq.~\ref{eq:emc2}).
+We make use of the method of \emph{intuition} to invent another theory (see Einstein \protect\hyperlink{ref-Einstein1905}{1905} and references therein). Occassionally, formulas were used, too (see e.g., eq.~\ref{eq:emc2}).
 
 \section{Results and Discussion}\label{results-and-discussion}
 
-The relativistic theory works much better than the classical theory (compare section~\ref{sec:intro}).
+The relativistic theory works much better than the classical theory, \(F=m\cdot a\), (compare section~\ref{sec:intro}). Most probably because more complex equations are involved, like \(E=\gamma m_0c^2\).
 In Fig.~\ref{fig:theories} some concepts are shown that might or might not our findings.
 
 \begin{figure}
 \centering
-\includegraphics{../fig/theories.png}
-\caption{Some theories.}\label{fig:theories}
+\includegraphics{../fig/theories.pdf}
+\caption{Some theories. Credit: Wikipedia.}\label{fig:theories}
 \end{figure}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
 \section{Conclusion and Outlook}\label{conclusion-and-outlook}
 
 Relativistic mechanics is probably the best way to describe a new theory of gravitation.
 The future will show whether there is any application of our theories.
 
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 \appendix
 
 \section{Some maths}\label{some-maths}
@@ -163,13 +179,13 @@ Because people love to see equations.
 
 \hypertarget{refs}{}
 \hypertarget{ref-Einstein1905}{}
-Einstein, Albert. 1905. ``{[}On the Electrodynamics of Moving Bodies.'' \emph{Annalen Der Physik} 322 (10): 891--921. doi:\href{https://doi.org/10.1002/andp.19053221004}{10.1002/andp.19053221004}.
+Einstein, Albert. 1905. ``On the Electrodynamics of Moving Bodies.'' \emph{Annalen Der Physik} 322 (10): 891--921. doi:\href{https://doi.org/10.1002/andp.19053221004}{10.1002/andp.19053221004}.
 
 \hypertarget{ref-Newton1730}{}
 Newton, Isaac. 1730. \emph{Opticks, or a Treatise of the Reflections, Refractions, Inflections and Colours of Light}. William Innys. \url{http://books.google.com/books?id=XXu4AkRVBBoC}.
 
-%%% MARTIN
-\subsection{Acknowledgements}
+%%% Science.md
+\subsubsection*{Acknowledgements}
 {\small We thank R. Penrose, who time-travelled to Isaac and Albert, and initiated communication.
 Thanks also to the anonymous reviewer who greatly improved this manuscript.}
 %%%

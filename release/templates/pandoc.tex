@@ -61,9 +61,10 @@ $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
 \usepackage[unicode=true]{hyperref}
-$if(colorlinks)$
-\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
-$endif$
+%%% Science.md
+    %\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+    \usepackage[usenames,dvipsnames]{color}
+%%%    
 \hypersetup{
 $if(title-meta)$
             pdftitle={$title-meta$},
@@ -198,7 +199,8 @@ $endif$
 \def\fps@figure{htbp}
 \makeatother
 
-%%% MARTIN
+%%% Science.md
+    % Header and Footer
     \usepackage{fancyhdr}
     \pagestyle{fancy}
     \fancyhead{}
@@ -207,12 +209,18 @@ $endif$
     \fancyfoot{}
     \fancyfoot[LE,RO]{\thepage}
     
-    \usepackage[version=4]{mhchem} % easy chem formulae with ce{H2O}
+    % Comments
+    \definecolor{gray}{rgb}{0.6,0.6,0.6}
+    \def\XX#1\par{\setlength{\fboxsep}{1pt}\colorbox{gray}{\textcolor{white}{\normalfont \texttt{XX}}} \color{gray} #1\color{black}\par}
     $for(comments)$
-    \def\$comments.ini$#1\par{\setlength{\fboxsep}{1pt}\colorbox{$comments.col$}{\textcolor{white}{\texttt{$comments.ini$}}} \color{$comments.col$} #1\color{black}}
+    \def\$comments.ini$#1\par{\setlength{\fboxsep}{1pt}\colorbox{$comments.col$}{\textcolor{white}{\normalfont \texttt{$comments.ini$}}} \color{$comments.col$} #1\color{black}\par}
     $endfor$
+
+    % TODO
     \newcommand{\TODO}{\setlength{\fboxsep}{2pt}\colorbox{blue}{\textcolor{white}{\texttt{TODO}}} }
 
+    % Misc packages
+    \usepackage[version=4]{mhchem} % easy chem formulae with ce{H2O}
 %%%
 
 $for(header-includes)$
@@ -226,7 +234,7 @@ $if(subtitle)$
 \providecommand{\subtitle}[1]{}
 \subtitle{$subtitle$}
 $endif$
-%%% MARTIN
+%%% Science.md
     \usepackage{authblk}
 
     $if(author)$ $for(author)$ $if(author.name)$
@@ -250,7 +258,7 @@ $endif$
 $if(abstract)$
 \begin{abstract}
 $abstract$
-%%% MARTIN
+%%% Science.md
 
     \vspace*{1em}
     Keywords: $for(keypoints)$ $keypoints$, $endfor$
@@ -279,9 +287,11 @@ $if(lof)$
 $endif$
 $body$
 
-%%% MARTIN
+%%% Science.md
+$if(acknowledgements)$
 \subsubsection*{Acknowledgements}
 {\small $acknowledgements$}
+$endif$
 %%%
 $if(natbib)$
 $if(bibliography)$

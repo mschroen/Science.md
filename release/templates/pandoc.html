@@ -63,6 +63,31 @@ figcaption, section.acknowledgements, #refs, table caption, td, th { font-size: 
 .affiliation { font-size: 75%; }
 img { max-width: 90%; }
 th { border: 1px solid black; border-width: 1px 0; }
+/** Highlight comments **/
+span.comment b {
+    font-style: normal;
+    color: white;
+    font-family: monospace;
+    display: inline-block;
+    padding: 0 0.2em;
+    border-radius: 2px }
+span.comment { font-style: italic; }
+span.XX { color: gray; }
+span.XX b { background-color: gray; }
+$for(comments)$
+    span.$comments.ini$ { color: $comments.col$; }
+    span.$comments.ini$ b { background-color: $comments.col$; }
+$endfor$
+/** Badgets **/
+span.todo { 
+    background-color: blue;
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    font-family: monospace;
+    display: inline-block;
+    padding: 0 0.2em;
+    border-radius: 2px }
 </style>
 $for(header-includes)$
   $header-includes$
@@ -79,13 +104,15 @@ $if(title)$
 $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
-<!-- MARTIN -->
+<!-- Science.md -->
+    $if(author)$
     <p class="authors">$for(author)$ $if(author.name)$
     <span>$author.name$<sup>$author.am$</sup></span>, 
     $else$<span>$author$<sup>1</sup></span>$endif$ $endfor$</p>
     <p class="affiliation">$for(affiliation)$ $if(affiliation.name)$
     <span><sup>$affiliation.am$</sup> $affiliation.name$</span><br>
     $else$<span><sup>1</sup> $affiliation$</span>$endif$ $endfor$</p>
+    $endif$
 <!-- ------ -->
 $if(date)$
 <p class="date">$date$</p>
@@ -97,13 +124,17 @@ $if(toc)$
 $toc$
 </nav>
 $endif$
-<!-- MARTIN -->
+<!-- Science.md -->
+    $if(abstract)$
     <section class="abstract"><b>Abstract:</b> $abstract$
     <p><b>Keywords:</b> $for(keypoints)$ $keypoints$, $endfor$</p></section>
+    $endif$
 <!-- ------ -->
 $body$
-<!-- MARTIN -->
-<section class="acknowledgements"><h3>Acknowledgements</h3>$acknowledgements$</section>
+<!-- Science.md -->
+    $if(acknowledgements)$
+    <section class="acknowledgements"><h3>Acknowledgements</h3>$acknowledgements$</section>
+    $endif$
 <!-- ------ -->
 $for(include-after)$
 $include-after$

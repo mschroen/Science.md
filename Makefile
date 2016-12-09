@@ -35,37 +35,74 @@ merge:
 
 # From Markdown to LaTeX using pandoc
 tex: merge
+	cp release/$(NAME).md release/$(NAME).md.temp
+    
+	@echo -e "\e[1;35m| sed s/==XX comment==/*\\XX comment*/ release/$(NAME).md\e[0m"
+	sed -i -- 's/==TODO==/\\TODO/g' release/$(NAME).md.temp
+	sed -i -- 's/==\([a-zA-Z]\+\) \([^=]\+\)==/*\\\1 \2*/g' release/$(NAME).md.temp
+	@echo -e "\e[1;35m| sed s/.png/.pdf/ release/$(NAME).md\e[0m"
+	sed -i -- 's/\.png/\.pdf/g' release/$(NAME).md.temp
+	
 	@echo -e "\e[1;35m| pandoc release/$(NAME).md -o release/$(NAME).tex\e[0m"
 	cd release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter=pandoc-citeproc -f markdown \
-	-V colorlinks -V papersize=A4 -V geometry=margin=1in --number-sections -M secPrefix=section -M tblPrefix=Table \
-    --template templates/pandoc.tex $(NAME).md -o $(NAME).tex
+	-V colorlinks -V papersize=a4 -V geometry=margin=1in --number-sections -M secPrefix=section -M tblPrefix=Table \
+    --template templates/pandoc.tex \
+    $(NAME).md.temp -o $(NAME).tex
+	
 	@echo -e "\e[40;1;32m> " $$(du -bh release/$(NAME).tex) "\e[0m"
+	rm release/$(NAME).md.temp
 
 # From Markdown to PDF using pandoc
 pdf: merge
+	cp release/$(NAME).md release/$(NAME).md.temp
+    
+	@echo -e "\e[1;35m| sed s/==XX comment==/*\\XX comment*/ release/$(NAME).md\e[0m"
+	sed -i -- 's/==TODO==/\\TODO/g' release/$(NAME).md.temp
+	sed -i -- 's/==\([a-zA-Z]\+\) \([^=]\+\)==/*\\\1 \2*/g' release/$(NAME).md.temp
 	@echo -e "\e[1;35m| sed s/.png/.pdf/ release/$(NAME).md\e[0m"
-	sed -i -- 's/\.png/\.pdf/g' release/$(NAME).md
+	sed -i -- 's/\.png/\.pdf/g' release/$(NAME).md.temp
+	
 	@echo -e "\e[1;35m| pandoc release/$(NAME).md -o release/$(NAME).pdf\e[0m"
 	cd release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter=pandoc-citeproc -f markdown \
-	-V colorlinks -V papersize=A4 -V geometry=margin=1in --number-sections -M secPrefix=section -M tblPrefix=Table \
-    --template templates/pandoc.tex $(NAME).md -o $(NAME).pdf
+	-V colorlinks -V papersize=a4 -V geometry=margin=1in --number-sections -M secPrefix=section -M tblPrefix=Table \
+    --template templates/pandoc.tex \
+    $(NAME).md.temp -o $(NAME).pdf
+	
 	@echo -e "\e[40;1;32m> " $$(du -bh release/$(NAME).pdf) "\e[0m"
+	rm release/$(NAME).md.temp
 
 # From Markdown to Word using pandoc
 docx: merge
+	cp release/$(NAME).md release/$(NAME).md.temp
+    
+	@echo -e "\e[1;35m| sed s/==XX comment==/[XX] comment/ release/$(NAME).md\e[0m"
+	sed -i -- 's/==TODO==/<span custom-style="TODO"> TODO <\/span>/g' release/$(NAME).md.temp
+	sed -i -- 's/==\([a-zA-Z]\+\) \([^=]\+\)==/<span custom-style="comment-name"> \1 <\/span><span custom-style="comment"> \2<\/span>/g' release/$(NAME).md.temp
+	
 	@echo -e "\e[1;35m| pandoc release/$(NAME).md -o release/$(NAME).docx\e[0m"
 	cd release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter=pandoc-citeproc -f markdown \
 	--number-sections -M secPrefix=section -M numberSections=true -M tblPrefix=Table \
-	$(NAME).md -o $(NAME).docx
+	--reference-docx=templates/reference.docx \
+	$(NAME).md.temp -o $(NAME).docx
+	
 	@echo -e "\e[40;1;32m> " $$(du -bh release/$(NAME).docx) "\e[0m"
+	rm release/$(NAME).md.temp
 
 # From Markdown to HTML using pandoc
 html: merge
+	cp release/$(NAME).md release/$(NAME).md.temp
+    
+	@echo -e "\e[1;35m| sed s/==XX comment==/[XX] comment/ release/$(NAME).md\e[0m"
+	sed -i -- 's/==TODO==/<span class="todo">TODO<\/span>/g' release/$(NAME).md.temp
+	sed -i -- 's/==\([a-zA-Z]\+\) \([^=]\+\)==/<span class="comment \1"><b>\1<\/b> \2<\/span>/g' release/$(NAME).md.temp
+	
 	@echo -e "\e[1;35m| pandoc release/$(NAME).md -o release/$(NAME).html\e[0m"
 	cd release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter pandoc-citeproc -f markdown \
 	--template templates/pandoc.html -t html5 --mathjax --number-sections -M secPrefix=section -M tblPrefix=Table \
-	$(NAME).md -o $(NAME).html
+	$(NAME).md.temp -o $(NAME).html
+	
 	@echo -e "\e[40;1;32m> " $$(du -bh release/$(NAME).html) "\e[0m"
+	rm release/$(NAME).md.temp
 
 # From Markdown to Everything
 all: merge html docx tex pdf

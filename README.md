@@ -23,25 +23,21 @@ No fancy hacking. No strange dependencies. *Science.md* only uses standard shell
 
 ### Advantages to other collaborative writing tools:
 
-- **Write in Markdown:** Focus on writing, not on Latex's commands or Word's formatting mess. Paper writing is now possible with simple plain text.
+- **Write in Markdown:** Focus on writing, not on Latex's commands or Word's formatting mess. Paper writing is now possible with simple plain text. And so is commenting by individual collaborators, creation of Gantt charts, and many more.
 - **Self-hosting repositories:** use any version control software hosted by you or your institution. Many institutions do not allow research to be hosted at someone else's server. You don't even have to use a remote repository, it's all yours!
 - **Work offline** from any location. That allows you to be independent from Wifi, and still be able to do fancy WYSIWYG writing in Markdown, e.g., using [Typora](http://www.typora.io/). 
 - **Full control:** It's your own folder, your own desktop, your own data. Add analysis scripts, processed data, sketches, ideas, and share anything without being bothered to upload. And by the way, it's only you who decides who has access to your repository.
 - **Fast compilation:** PDF and Word documents are created within seconds. By sharing both, your colleagues can choose how they want to annotate and comment your work. Want to put your paper on a website? It's just a millisecond away.
 - **Fully adaptable:** all the scripts and templates are open-source. Adapt it to your needs. For example, use a specific journal template, or add more features. 
+- **Project planning included:** Markdown-based tools to make *Gantt* and *Task lists*. 
 
 ## Screenshots
 
-Editing `.md` files with Typora, compiling output with the `Makefile`, and screenshots of output files: PDF, Latexdiff, Word, HTML. Last shot is from Gantt creation using simple Markdown text (converted website is displayed in the background).
+- Many screenshots are presented in [Issue #1](https://github.com/mschroen/Science.md/issues/1).
+- Please have a look at the files `release/science.md.*` to view some examples.
+- Here is a summary of some visualisations of *Science.md* output:
 
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733103/bbfd00f0-b689-11e6-981d-00d8bf23c1e1.png" width="20%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733107/bc074ce0-b689-11e6-8a2e-b561a8e2ddee.png" width="20%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733102/bbde7aa4-b689-11e6-9489-7c96f3f0e925.png" width="20%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733104/bc00ebde-b689-11e6-86c1-b594bb5870e6.png" width="20%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733106/bc051182-b689-11e6-94d6-283c29abb296.png" width="20%"/></a>
-<a href="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20733105/bc02f442-b689-11e6-9aee-b2bfc43d9518.png" width="20%"/></a> 
-<a href="https://cloud.githubusercontent.com/assets/7942719/20797779/34f38646-b7d4-11e6-99eb-16626c398a87.png"><img src="https://cloud.githubusercontent.com/assets/7942719/20797779/34f38646-b7d4-11e6-99eb-16626c398a87.png" width="20%"/></a> 
-
+![Science.md Screenshots of output](https://cloud.githubusercontent.com/assets/7942719/21054952/82028d20-be27-11e6-9967-c32f4cf72eb8.png)
 
 ## Requirements 
 
@@ -95,8 +91,8 @@ As soon as your paper is ready and went smoothly through the internal review, yo
 
 ### Comments
 
-- **Visible** comments can be started within the text by typing a *backslash* followed by your initials, e.g. `\MS I better like invisble comments.` Use the YAML settings in `content/title.md` to add more initials and corresponding colors.
-- **Invisible** comments will not appear in the compiled output and can be of any length. Those comments follow the HTML style guide and look like this: `<!--- this is a comment --->`
+- **Visible** comments are framed by double equal signs, followed by your initials, space, and the text, e.g. `==XX I better like invisble comments, though.==`. Use the YAML settings in `content/title.md` to add individual initials and the corresponding colors. *Typora* will highlight these comments with yellow shade if the setting is activated in the program preferences. In *MS Word*, individual colors are not supported due to *pandoc* limitations. Comments in general must *not* contain equal signs. 
+- **Invisible** comments will not appear in the compiled output and can be of any length. Those comments follow the HTML style guide and look like this: `<!--- this is a comment --->`.
 
 ### Figures
 
@@ -139,7 +135,7 @@ The currently compiled files are stored in `release/` and can be copied to an ex
 - figure: `![caption](../fig/file.png){#fig:label}`
 - math: `$x=1$`, `$$ A=B $$ {#eq:label}`, `$$\begin{aligned} A &= B \\ C &= A+B \end{aligned}$$`
 - reference: `@Fig:label`, `[@Fig:label1; @fig:label1]`, `@sec:label`, `@eq:label`, `@tbl:label`, `[Appendix @sec:label]`, `[Appendices @sec:label1; Appendices @sec:label1]`
-- comments: `\XX text until two newlines`, `\MS personalized comment` (defined in *content/title.md*), `<!--- invisible comment --->`
+- comments: `==XX a random comment==`, `==MS a personalized comment==` (defined in *content/title.md*), `<!--- invisible comment --->`
 - code: `` `code` `` or paragraphs with a left-padding of 4 spaces 
 - table:
     ```
