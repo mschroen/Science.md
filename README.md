@@ -43,7 +43,41 @@ No fancy hacking. No strange dependencies. *Science.md* only uses standard shell
 
 ### OS
 
-*Science.md* uses no OS-specific software and thus should work on any operating system. However, so far it has been tested only on Windows, and I would be glad if someone could test it on Mac and Linux!
+*Science.md* uses no OS-specific software and thus should work on any operating system. However, so far it has been tested only on Windows, and I would be glad if someone could test it on Mac and Linux!  
+#### config and run on amazon AMI linux  
+
+- get docker run on AMAZON AMI     
+
+> sudo yum install docker  
+
+- get an image which is ready for pandoc and texlive ,fortunitly, there is one which we an use out-of-box.
+
+> sudo docker pull ivotron/pandoc  
+
+> in your AMI linux ,use git to get Scince.md,then change to the direcotry.
+
+- then we can run the docker like this:  
+
+>sudo docker run -d --name myscimd -v `pwd`:/usr/scimd ivotron/pandoc  
+
+>since there is no *scimd* direcotry in the ivotron/pandoc image ,you should first go into a running one ,mkdir and then commmit the change.   
+
+- go into the docker container like this:    
+
+> sudo docker run exec -it *containerid* /bin/bash/   
+
+- go into /usr/scimd   
+
+> cd /usr/scimd  
+
+- then use cmd :  
+
+> make -s pdf  or any others ,enjoy:). becuase we use docker to mount a direcoty ,you can find you output in you host linux ,they are in *Scince.md/release* direcotry.
+
+
+
+
+
 
 ### Editing
 
