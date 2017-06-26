@@ -122,6 +122,7 @@ $if(verbatim-in-note)$
 \usepackage{fancyvrb}
 \VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
+\usepackage{longtable,booktabs}
 $if(tables)$
 \usepackage{longtable,booktabs}
 % Fix footnotes in tables (requires footnote package)
@@ -261,7 +262,7 @@ $abstract$
 %%% Science.md
 
     \vspace*{1em}
-    Keywords: $for(keypoints)$ $keypoints$, $endfor$
+    Keywords: $for(keywords)$ $keywords$, $endfor$
 %%%
 \end{abstract}
 $endif$

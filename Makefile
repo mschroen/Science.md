@@ -65,7 +65,7 @@ pdf: merge
 	@echo -e "\e[1;35m| pandoc release/$(NAME).md -o release/$(NAME).pdf\e[0m"
 	cd release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter=pandoc-citeproc -f markdown \
 	-V colorlinks -V papersize=a4 -V geometry=margin=1in --number-sections -M secPrefix=section -M tblPrefix=Table \
-    --template templates/pandoc.tex \
+    --template templates/pandoc.tex --csl templates/copernicus.csl \
     $(NAME).md.temp -o $(NAME).pdf
 	
 	@echo -e "\e[40;1;32m> " $$(du -bh release/$(NAME).pdf) "\e[0m"
