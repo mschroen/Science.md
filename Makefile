@@ -44,7 +44,7 @@ tex: merge
 	sed -i -- 's/\.png/\.pdf/g' release/$(NAME).md.temp
 	
 	@echo -e "\e[1;35m| pandoc release/$(NAME).md -o release/$(NAME).tex\e[0m"
-	cd release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter=pandoc-citeproc -f markdown \
+	cd release && pandoc --wrap=preserve -s --filter pandoc-crossref --filter=pandoc-citeproc \
 	-V colorlinks -V papersize=a4 -V geometry=margin=1in --number-sections -M secPrefix=section -M tblPrefix=Table \
     --template templates/pandoc.tex \
     $(NAME).md.temp -o $(NAME).tex
@@ -63,7 +63,7 @@ pdf: merge
 	sed -i -- 's/\.png/\.pdf/g' release/$(NAME).md.temp
 	
 	@echo -e "\e[1;35m| pandoc release/$(NAME).md -o release/$(NAME).pdf\e[0m"
-	cd release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter=pandoc-citeproc -f markdown \
+	cd release && pandoc --wrap=preserve -s --filter pandoc-crossref --filter=pandoc-citeproc -f markdown \
 	-V colorlinks -V papersize=a4 -V geometry=margin=1in --number-sections -M secPrefix=section -M tblPrefix=Table \
     --template templates/pandoc.tex --csl templates/copernicus.csl \
     $(NAME).md.temp -o $(NAME).pdf
@@ -80,9 +80,9 @@ docx: merge
 	sed -i -- 's/==\([a-zA-Z]\+\) \([^=]\+\)==/<span custom-style="comment-name"> \1 <\/span><span custom-style="comment"> \2<\/span>/g' release/$(NAME).md.temp
 	
 	@echo -e "\e[1;35m| pandoc release/$(NAME).md -o release/$(NAME).docx\e[0m"
-	cd release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter=pandoc-citeproc -f markdown \
+	cd release && pandoc --wrap=preserve -s --filter pandoc-crossref --filter=pandoc-citeproc -f markdown \
 	--number-sections -M secPrefix=section -M numberSections=true -M tblPrefix=Table \
-	--reference-docx=templates/reference.docx \
+	--reference-doc=templates/reference.docx \
 	$(NAME).md.temp -o $(NAME).docx
 	
 	@echo -e "\e[40;1;32m> " $$(du -bh release/$(NAME).docx) "\e[0m"
@@ -97,7 +97,7 @@ html: merge
 	sed -i -- 's/==\([a-zA-Z]\+\) \([^=]\+\)==/<span class="comment \1"><b>\1<\/b> \2<\/span>/g' release/$(NAME).md.temp
 	
 	@echo -e "\e[1;35m| pandoc release/$(NAME).md -o release/$(NAME).html\e[0m"
-	cd release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter pandoc-citeproc -f markdown \
+	cd release && pandoc --wrap=preserve -s --filter pandoc-crossref --filter pandoc-citeproc -f markdown \
 	--template templates/pandoc.html -t html5 --mathjax --number-sections -M secPrefix=section -M tblPrefix=Table \
 	$(NAME).md.temp -o $(NAME).html
 	

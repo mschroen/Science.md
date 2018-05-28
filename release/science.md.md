@@ -9,7 +9,7 @@ affiliation:
 - { am: "C", name: "Correspondence: albert.einstein@gmail.com"}
 runningauthor: Einstein et al.
 runningtitle: GRAVITATIONAL THEORIES
-keypoints:
+keywords:
 - Classical mechanics
 - Relativistic mechanics
 comments:
