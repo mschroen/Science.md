@@ -28,7 +28,7 @@ cp ../release/%NAME%.md ../release/%NAME%.md.temp
 sed -i -- 's/==TODO==/^<span class="todo"^>TODO^<\/span^>/g' ../release/%NAME%.md.temp
 sed -i -- 's/==\([a-zA-Z]\+\) \([^^=]\+\)==/^<span class="comment \1"^>^<b^>\1^<\/b^> \2^<\/span^>/g' ../release/%NAME%.md.temp
 
-cd ../release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter pandoc-citeproc -f markdown ^
+cd ../release && pandoc --wrap=preserve -s --filter pandoc-crossref --filter pandoc-citeproc -f markdown ^
 --template templates/pandoc.html -t html5 --mathjax --number-sections -M secPrefix=section -M tblPrefix=Table ^
 %NAME%.md.temp -o %NAME%.html
 for %%I in (%NAME%.html) do @echo "> Bytes: %%~znI.html"
@@ -42,9 +42,9 @@ cp ../release/%NAME%.md ../release/%NAME%.md.temp
 sed -i -- 's/==TODO==/^<span custom-style="TODO"^> TODO ^<\/span^>/g' ../release/%NAME%.md.temp
 sed -i -- 's/==\([a-zA-Z]\+\) \([^^=]\+\)==/^<span custom-style="comment-name"^> \1 ^<\/span^>^<span custom-style="comment"^> \2^<\/span^>/g' ../release/%NAME%.md.temp
 
-cd ../release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter=pandoc-citeproc -f markdown ^
+cd ../release && pandoc --wrap=preserve -s --filter pandoc-crossref --filter=pandoc-citeproc -f markdown ^
 --number-sections -M numberSections=true -M secPrefix=section -M tblPrefix=Table ^
---reference-docx=templates/reference.docx ^
+--reference-doc=templates/reference.docx ^
 %NAME%.md.temp -o %NAME%.docx
 for %%I in (%NAME%.docx) do @echo "> Bytes: %%~znI.docx"
 @echo.
@@ -57,7 +57,7 @@ sed -i -- 's/==TODO==/\\\\TODO/g' ../release/%NAME%.md.temp
 sed -i -- 's/==\([a-zA-Z][^^=]\+\)==/\*\\\\\1\*/g' ../release/%NAME%.md.temp
 sed -i -- 's/\.png/\.pdf/g' ../release/%NAME%.md.temp
 
-cd ../release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter=pandoc-citeproc -f markdown ^
+cd ../release && pandoc --wrap=preserve -s --filter pandoc-crossref --filter=pandoc-citeproc -f markdown ^
 -V colorlinks -V papersize=a4 -V geometry=margin=1in --number-sections -M secPrefix=section -M tblPrefix=Table ^
 --template templates/pandoc.tex %NAME%.md.temp -o %NAME%.tex
 for %%I in (%NAME%.tex) do @echo "> Bytes: %%~znI.tex"
@@ -66,9 +66,9 @@ for %%I in (%NAME%.tex) do @echo "> Bytes: %%~znI.tex"
 REM make PDF
 @echo "| pandoc release/%NAME%.md -o release/%NAME%.pdf"
 
-cd ../release && pandoc --wrap=preserve -s -S --filter pandoc-crossref --filter=pandoc-citeproc -f markdown ^
+cd ../release && pandoc --wrap=preserve -s --filter pandoc-crossref --filter=pandoc-citeproc -f markdown ^
 -V colorlinks -V papersize=a4 -V geometry=margin=1in --number-sections -M secPrefix=section -M tblPrefix=Table ^
---template templates/pandoc.tex %NAME%.md.temp -o %NAME%.pdf
+--template templates/pandoc.tex --csl templates/copernicus.csl %NAME%.md.temp -o %NAME%.pdf
 for %%I in (%NAME%.pdf) do @echo "> Bytes: %%~znI.pdf"
 @echo.
 
